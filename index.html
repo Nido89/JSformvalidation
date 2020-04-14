@@ -4,30 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Validation With JS</title>
-    <style>
-        body{
-            padding: 50px 10px;
-
-        }
-        .formdesign{
-            font-size: 30px;
-        }
-        .formdesign input {
-            width: 50%;
-            padding:12px 20px;
-            border: 2px solid yellow;
-            margin: 14px;
-            border-radius: 4px;
-            font-size: 15px;
-        }
-    </style>
+   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <h1>Form Validation with Modern Javascript</h1>
-    <form>
+    <form action="/myaction.php" name="myForm" onsubmit="return validateForm()" method="POST">
         <div class="formdesign" id="name">
-        Name: <input type="text" name="fname"><span>This is an error</span>
+        Name: <input type="text" required name="fname"><b><span class="formerror"></span></b>
     </div>
+    <div class="formdesign" id="email">
+        Email: <input type="email" required name="femail"><b><span class="formerror"></span></b>
+    </div>
+    <div class="formdesign" id="phone">
+        Phone: <input type="phone" name="fphone"><b><span class="formerror"></span></b>
+    </div>
+    <div class="formdesign" id="pass">
+        Password: <input type="password" name="fpass"><b><span class="formerror"></span></b>
+    </div>
+    <div class="formdesign" id="cpass">
+        Confirm Password: <input type="password" name="fcpass"><b><span class="formerror"></span></b>
+    </div>
+
+    <input class="but" value="Submit" type="submit">
     </form>
+
+    
 </body>
+<script src="./script.js"></script>
 </html>
